@@ -66,4 +66,4 @@ vinicius = 0
 if vinicius:
     print("Vini BallondOro")
 else:
-    print("Jude BallondOro")
+    print("Kroos BallondOro")
