@@ -15,5 +15,19 @@ def guess(x):
         
 guess(10)
 
+#Get the computer to guess our secret number
+def secret(x):
+    low = 1
+    high = x 
+    feedback = ""
+    while feedback != "c": #random.randint will show an error when both low and high are the same number\
+        # and you still tell the computer to adjust its bounds by inputting "h" or "l"
+        computer_guess = random.randint(low, high)
+        feedback = input(f"Is {computer_guess} too high (H), too low (L), or correct (C)?? ").lower()
+        if feedback == "h":
+            high = computer_guess - 1
+        elif feedback == "l":
+            low = computer_guess + 1
+    print(f'Bingo, I guessed "{computer_guess}" correctly. Never underestimate your computer again.')
 
-        
+secret(10)
