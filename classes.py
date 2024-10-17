@@ -60,3 +60,5 @@ print(naples_beach.heat_rating, california_beach.heat_rating)
 california_beach.add_part("rock")
 print(naples_beach.parts, california_beach.parts)
 print(naples_beach.uppercase())
+
+#Write a function that goes through all of the beaches and returns the ones that are 
