@@ -61,4 +61,26 @@ california_beach.add_part("rock")
 print(naples_beach.parts, california_beach.parts)
 print(naples_beach.uppercase())
 
-#Write a function that goes through all of the beaches and returns the ones that are 
+#Write a function that goes through all of the beaches and returns the ones that are hot and not rocky.
+def exercise():
+    sicily_beach = Beach("Italy", "Green", 90)
+    sicily_beach.add_part("rock")
+    miami_beach = Beach("USA", "Orange", 90)
+    london_beach = Beach("England", "Grey", 60)
+    istanbul_beach = Beach("Turkey", "Maroon", 85)
+    amsterdam_beach = Beach("Netherlands", "Blue", 65)
+    amsterdam_beach.add_part("rock")
+    hot_not_rocky = []
+    for beach in [sicily_beach, miami_beach, london_beach, istanbul_beach, amsterdam_beach]:
+        if beach.heat_rating == "hot" and "rock" not in beach.parts:
+            hot_not_rocky.append(beach)
+    return hot_not_rocky
+
+if __name__ == "__main__":
+    beaches = exercise() #exercise() returns the list: [miami_beach, istanbul_beach] and assigns it to beaches.
+    #we can't simply print(beaches) as when we try to print an object directly in Python, it shows its memory location by default. To get a \
+    #human-readable description of the object, we also need to specify an attribute.
+    print([beach.location for beach in beaches])
+
+
+
