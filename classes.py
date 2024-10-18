@@ -59,7 +59,7 @@ print(naples_beach.heat_rating, california_beach.heat_rating)
 #calling a method works the same way as calling an attribute i.e. by using a period
 california_beach.add_part("rock")
 print(naples_beach.parts, california_beach.parts)
-print(naples_beach.uppercase())
+print(naples_beach.uppercase()) #to get the return value of a method, call it with parenthesis
 
 #Write a function that goes through all of the beaches and returns the ones that are hot and not rocky.
 def exercise():
@@ -82,5 +82,42 @@ if __name__ == "__main__":
     #human-readable description of the object, we also need to specify an attribute.
     print([beach.location for beach in beaches])
 
+class Pokemon():
+    type = "Fire"
+    weakness = "Water"
+    def __init__(self, master, special_move, color, hp, evolution):
+        self.master = master
+        self.special_move = special_move
+        self.color = color
+        self.hp = hp
+        self.status = "Legendary" if hp > 150 else "Ordinary"
+        self.evolutions = evolution
+    
+    def forms(self):
+        return len(self.evolutions)
 
+charizard = Pokemon("Ash", "Canon Blast", "Orange", 160, ["Charmander", "Charmeleon", "Charizard"])
+typlosion = Pokemon("Ash", "Fire Storm", "Dark Green", 152, ["Cyndaquill", "Quilava", "Typhlosion"])
+houndoom = Pokemon("Gary", "Fire Fang", "Black", 90, ["Houndour", "Houndoom"])
+moltres = Pokemon("Anonymous", "Fiery Wrath", "Tangerine", 220, [])
+
+print(charizard.status, houndoom.status)
+print(typlosion.type, houndoom.type)
+print(f"Moltres's HP reaches a staggering {moltres.hp} when it uses its special move '{moltres.special_move}'")
+print(charizard.forms(), houndoom.forms(), moltres.forms())
+#write a function that goes through all of the pokemons and returns the ones whose master is "Ash" and they have more than one evolved form.
+def selection():
+    charizard = Pokemon("Ash", "Canon Blast", "Orange", 160, ["Charmander", "Charmeleon", "Charizard"])
+    typlosion = Pokemon("Ash", "Fire Storm", "Dark Green", 152, ["Cyndaquill", "Quilava", "Typhlosion"])
+    houndoom = Pokemon("Gary", "Fire Fang", "Black", 90, ["Houndour", "Houndoom"])
+    moltres = Pokemon("Anonymous", "Fiery Wrath", "Tangerine", 220, [])
+    output = []
+    for pokemon in [charizard, typlosion, houndoom, moltres]:
+        if pokemon.master == "Ash" and pokemon.forms() > 1: #to get the return value of the Method 'forms', call it with a parenthesis
+            output.append(pokemon)
+    return output
+
+if __name__ == '__main__':
+    pokemons = selection()
+    print([member.special_move for member in pokemons])
 
