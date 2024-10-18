@@ -117,7 +117,18 @@ def selection():
             output.append(pokemon)
     return output
 
-if __name__ == '__main__':
+if __name__ == '__main__': #checks if file is being run directly or through import
     pokemons = selection()
     print([member.special_move for member in pokemons])
+else:
+    print("Run from Import") #will only get executed when imported as module into another file
+
+print("Classes Name: {}".format(__name__)) #when file is run directly, __name__ will be set to __main__, but when imported, it will be\
+#set to the file's name(classes)
+
+def main():
+    print("Hello World")
+
+if __name__ == '__main__':
+    main()
 
