@@ -64,6 +64,6 @@ else:
 # Conditionals don't always have to be a Boolean expression
 vinicius = 0
 if vinicius:
-    print("Vini BallondOro")
+    print("Vinicius BallondOro")
 else:
     print("Jude BallondOro")
