@@ -1,6 +1,6 @@
 class Coast:
     location = "Cape Cod"
-    water_color = "turqoise"
+    water_color = "turquoise"
 
 #after creating the class (new object), we create instances of that object to access its data and functions.
 cape_cod_coast = Coast()
@@ -10,7 +10,7 @@ print(cape_cod_coast.location, coast_2.location)
 print(cape_cod_coast.water_color)
 #we can change the attributes of a class
 cape_cod_coast.location = "Cancun"
-#changing cape cod location won't affect beach_2 as beach_2 is an object with its own attributes.
+#changing Cape Cod location won't affect beach_2 as beach_2 is an object with its own attributes.
 print(cape_cod_coast.location, coast_2.location)
 
 #Initialization Function
@@ -23,7 +23,7 @@ class Beach():
         self.temperature = temperature
         self.heat_rating = "hot" if temperature > 80 else "cool"
 
-#these various objects have their own properties but they're tied together by the same class.
+#these various objects have their own properties, but they're tied together by the same class.
 naples_beach = Beach("Naples", "dark blue", 90) #self doesn't take any arguments
 california_beach = Beach("California", "crystal blue", 70)
 
@@ -61,7 +61,7 @@ california_beach.add_part("rock")
 print(naples_beach.parts, california_beach.parts)
 print(naples_beach.uppercase()) #to get the return value of a method, call it with parenthesis
 
-#Write a function that goes through all of the beaches and returns the ones that are hot and not rocky.
+#Write a function that goes through all the beaches and returns the ones that are hot and not rocky.
 def exercise():
     sicily_beach = Beach("Italy", "Green", 90)
     sicily_beach.add_part("rock")
@@ -105,7 +105,7 @@ print(charizard.status, houndoom.status)
 print(typlosion.type, houndoom.type)
 print(f"Moltres's HP reaches a staggering {moltres.hp} when it uses its special move '{moltres.special_move}'")
 print(charizard.forms(), houndoom.forms(), moltres.forms())
-#write a function that goes through all of the pokemons and returns the ones whose master is "Ash" and they have more than one evolved form.
+#write a function that goes through all the Pokémon and returns the ones whose master is "Ash" and they have more than one evolved form.
 def selection():
     charizard = Pokemon("Ash", "Canon Blast", "Orange", 160, ["Charmander", "Charmeleon", "Charizard"])
     typlosion = Pokemon("Ash", "Fire Storm", "Dark Green", 152, ["Cyndaquill", "Quilava", "Typhlosion"])
@@ -131,4 +131,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-
